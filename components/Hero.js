@@ -1,10 +1,10 @@
 
 const Hero = () => {
   return (
-    <div className="flex container mx-auto gap-6 h-[450px] items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto gap-8 h-auto md:h-[480px] items-center">
     <div>
-     <div className="rounded-xl w-[710px] overflow-hidden">
-       <img src="https://raw.githubusercontent.com/irfan-fauzi/blog-nextjs-wireframe/main/assets/Rectangle%204.jpg" alt="" className=""/>
+     <div className="rounded-xl  overflow-hidden">
+       <img src="https://raw.githubusercontent.com/irfan-fauzi/blog-nextjs-wireframe/main/assets/Rectangle%204.jpg" alt="" className="w-full"/>
      </div>
     </div> 
      <div className="font-patrick flex flex-col h-[100%] justify-center gap-4">
