@@ -76,7 +76,6 @@ const HeaderNavbar = () => {
             <div className="w-3/12">
               <form>
                 <div className="p-3 rounded-full bg-gray-800">
-                  {/* <button className="text-gray-400"><i className="fas fa-search"></i></button> */}
                   <input type="text" className="bg-transparent text-white  px-2 box-border border-none" placeholder="Search"/>
                 </div>
               </form>
