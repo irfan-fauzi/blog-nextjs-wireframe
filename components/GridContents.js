@@ -1,7 +1,9 @@
+import { useState } from "react"
+import GridContentItem from "./GridContentItem"
 
 const GridContents = () => {
-
-  const content = [
+  
+  const [content, setContent] = useState([
     {
       img: 'https://raw.githubusercontent.com/irfan-fauzi/blog-nextjs-wireframe/main/assets/thumbnail-2.jpg',
       categorie: 'internet',
@@ -62,37 +64,27 @@ const GridContents = () => {
       imgWriter: 'https://raw.githubusercontent.com/irfan-fauzi/blog-nextjs-wireframe/main/assets/author-4.jpg',
       nameWriter: 'jenny wilson',
       profesion: 'front end engineer'
-    }
+    },
     
-  ]
+  ])
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 container mx-auto">
+    <article className="grid grid-cols-1 md:grid-cols-3 gap-2 container mx-auto">
       {
-
-        content.map( ({img, categorie, date, title, content, imgWriter, nameWriter, profesion}) => (
-          <div className="text-gray-100 font-patrick p-5 flex flex-col gap-3" key={Math.random()}>
-            <div className="overflow-hidden rounded-xl">
-              <img src={img} alt={title} className="w-full" />
-            </div>
-            <div className="flex gap-4 text-gray-400">
-              <p>{ categorie }</p>
-              <p>{ date }</p>
-            </div>
-            <h3 className="text-2xl">{ title }</h3>
-            <p className="text-gray-400">{ content }</p>
-            <div className="flex gap-4 items-center mt-4 text-gray-400">
-              <img src={imgWriter} alt={nameWriter} className="rounded-full w-[50px]" />
-              <div className="flex flex-col">
-                <p className="text-gray-300">{ nameWriter }</p>
-                <p>{ profesion }</p>
-              </div>  
-            </div>
-          </div>
+        content.map(({img, categorie, date, title, content, imgWriter, nameWriter, profesion}) => (
+          <GridContentItem 
+            img={img}
+            categorie={categorie}
+            date={date}
+            title={title}
+            content={content}
+            imgWriter={imgWriter}
+            nameWriter={nameWriter}
+            profesion={profesion}
+          />
         ))
-
       }
       
-    </div>
+    </article>
   )
 }
 

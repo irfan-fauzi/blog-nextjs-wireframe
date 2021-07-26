@@ -4,6 +4,9 @@ import { useState } from "react"
 const HeaderNavbar = () => {
 
   const [isDropDown,setDropDown] = useState(false)
+  const [isLittleSearch, setLitleSearch] = useState(false)
+  console.log(isLittleSearch)
+
   const listDropDown = [
     {
       text: 'Hoby',
@@ -44,13 +47,17 @@ const HeaderNavbar = () => {
   }
 
   return (
-    <nav className="border-0">
-        <div className="container mx-auto ">
+    <nav className="">
+        <div className="container mx-auto px-4 md:px-0">
           <div className="flex h-28 items-center justify-between">
-            <div className="w-2/12">
-              <h1 className="text-white text-2xl font-patrick font-bold">IrfanBlog</h1>
+            <div className="md:hidden">
+              <button className="text-4xl">🍔</button>
             </div>
-            <div className="w-8/12">
+            <div className="hidden md:block">
+                <h1 className="text-white text-3xl font-patrick font-bold" >IrfanBlog</h1>
+            </div>
+            
+            <div className="hidden md:block">
               <ul className="flex gap-9 text-white capitalize">
                 {
                   menusNavbar.map(item => (
@@ -73,10 +80,17 @@ const HeaderNavbar = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-3/12">
+            <div className="">
               <form>
-                <div className="p-3 rounded-full bg-gray-800">
-                  <input type="text" className="bg-transparent text-white  px-2 box-border border-none" placeholder="Search"/>
+                <div className="cursor-pointer p-3 rounded-full bg-gray-800 flex" onClick={ () => setLitleSearch(true) } >
+
+                  {
+                    isLittleSearch && (
+                      <input type="text" className="transition-all md:block bg-transparent text-white  px-2 box-border border-none" placeholder="Search"/>
+                    )
+                  }
+                 
+                  <button className="text-gray-300  px-1"><i className="fas fa-search"></i></button>
                 </div>
               </form>
             </div>
